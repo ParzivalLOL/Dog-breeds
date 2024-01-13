@@ -1,4 +1,4 @@
 ultralytics
-PIL
+Pillow
 flask
 Gunicorn
