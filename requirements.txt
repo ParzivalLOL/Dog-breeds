@@ -1,3 +1,4 @@
 ultralytics
 PIL
 flask
+Gunicorn
