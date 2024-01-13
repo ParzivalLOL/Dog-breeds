@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block head %}
+<title> Home </title>
+{% endblock %}
+
+{% block body %}
+<h1>Dog Breeds 🐶</h1>
+  
+  <div class = "about">
+    
+    <h2>About</h2>
+    
+    <p>Welcome to DogBreedDetector.com – the quickest way to identify your dog's breed! Upload an image, and our advanced technology will instantly reveal the breed details. Whether you're a dog owner or just curious, explore the diverse world of canine companionship with ease. Discover your furry friend's heritage at DogBreedDetector.com!</p>
+  </div>
+  <div class = "getStarted">
+    <h2> Get Started</h2>
+    <p>In order to get started, upload an image below</p>
+  </div>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <button type="submit">Upload</button>
+    </form>
+  <div class="about">
+    <h2> OR </h2>
+    <p> Visit my 'About' section: </p>
+    <a href="/about"> About </a>
+  </div>
+{% endblock %}

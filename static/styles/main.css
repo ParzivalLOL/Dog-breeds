@@ -1,0 +1,32 @@
+body {
+    background-image: url('/static/images/background.png');
+    background-blend-mode:soft-light;
+}
+h1 {
+    margin: 5%;
+    font-family: "papyrus", fantasy;
+    font-size: 100px;
+}
+h2 {
+    font-size: 40px;
+    font-family: "papyrus", fantasy;
+
+}
+.about {
+    font-size: 25px;
+    margin: 5%;
+    font-family: "papyrus", fantasy;
+    font-weight: 600;
+}
+.getStarted {
+    font-size: 25px;
+    margin: 5%;
+    font-family: "papyrus", fantasy;
+    font-weight: 600;
+}
+p {
+    width: 75%;
+}
+form {
+    margin: 5%;
+}
