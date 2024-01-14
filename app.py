@@ -22,7 +22,8 @@ def upload():
     # Save the uploaded file to the upload folder
 
     # Process the image file (you can add your own image processing logic here)
-    model = YOLO("C:/Users/shukl/OneDrive/Desktop/Programming/AI/dogAI/best.pt")
+    path_to_best_pt = "C:/Users/shukl/OneDrive/Desktop/Programming/AI/dogAI/best.pt"
+    model = YOLO(path_to_best_pt)
     file = request.files['file']
     image = Image.open(file)
     results = model(image)
