@@ -22,7 +22,7 @@ def upload():
     # Save the uploaded file to the upload folder
 
     # Process the image file (you can add your own image processing logic here)
-    model = YOLO("best.pt")
+    model = YOLO(".gitattributes")
     file = request.files['file']
     image = Image.open(file)
     results = model(image)
