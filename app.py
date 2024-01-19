@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request
 from ultralytics import YOLO
 from PIL import Image
+import cv2
 app = Flask(__name__)
 
 @app.route('/')
@@ -22,10 +23,13 @@ def upload():
     # Save the uploaded file to the upload folder
 
     # Process the image file (you can add your own image processing logic here)
-    path_to_best_pt = "best.pt"
+    path_to_best_pt = "C:/Users/shukl/OneDrive/Desktop/Programming/AI/dogAI/best.pt"
     model = YOLO(path_to_best_pt)
     file = request.files['file']
-    image = Image.open(file)
+    #image = Image.open(file)
+    image = cv2.imread(file)
+    orig_shape = image.shape[:2]
+    image.orig_shape = orig_shape
     results = model(image)
     label = results[0].probs.top5
     breed = results[0].names[label[0]].title()
@@ -41,4 +45,4 @@ def about():
     return render_template('about.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
