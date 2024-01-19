@@ -26,10 +26,7 @@ def upload():
     path_to_best_pt = "C:/Users/shukl/OneDrive/Desktop/Programming/AI/dogAI/best.pt"
     model = YOLO(path_to_best_pt)
     file = request.files['file']
-    #image = Image.open(file)
-    image = cv2.imread(file)
-    orig_shape = image.shape[:2]
-    image.orig_shape = orig_shape
+    image = Image.open(file)
     results = model(image)
     label = results[0].probs.top5
     breed = results[0].names[label[0]].title()
