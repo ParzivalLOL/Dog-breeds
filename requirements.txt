@@ -2,3 +2,4 @@ ultralytics
 Pillow
 flask
 Gunicorn
+cv2
