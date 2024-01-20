@@ -23,7 +23,12 @@ def upload():
 
     # Process the image file (you can add your own image processing logic here)
     path_to_best_pt = "C:/Users/shukl/OneDrive/Desktop/Programming/AI/dogAI/best.pt"
-    model = YOLO(path_to_best_pt)
+    try:
+        model = YOLO(path_to_best_pt)
+    except Exception as e:
+        return (f"Error initializing YOLO model: {e}")
+    # Add additional logging or handle the exception appropriately
+
     file = request.files['file']
     image = Image.open(file)
     results = model(image)
