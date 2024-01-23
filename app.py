@@ -31,7 +31,7 @@ def upload():
 
     file = request.files['file']
     image = Image.open(file)
-    results = mod(image)
+    results = mod.predict(image)
     label = results[0].probs.top5
     breed = results[0].names[label[0]].title()
     if breed[0] == 'A' or 'E' or 'I' or 'O' or 'U':
