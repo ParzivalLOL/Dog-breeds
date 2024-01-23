@@ -24,14 +24,14 @@ def upload():
     # Process the image file (you can add your own image processing logic here)
     path_to_best_pt = "best.pt"
     try:
-        model = YOLO(path_to_best_pt)
+        mod = YOLO(path_to_best_pt)
     except Exception as e:
         return (f"Error initializing YOLO model: {e}")
     # Add additional logging or handle the exception appropriately
 
     file = request.files['file']
     image = Image.open(file)
-    results = model(image)
+    results = mod(image)
     label = results[0].probs.top5
     breed = results[0].names[label[0]].title()
     if breed[0] == 'A' or 'E' or 'I' or 'O' or 'U':
